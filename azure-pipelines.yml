@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: 'git clone https://github.com/rdagumampan/yuniql $(Build.SourcesDirectory)\yuniql'
+    
+- task: UseYuniqlCLI@1
+  inputs:
+    version: 'v1.1.55'
+
+- task: RunYuniqlCLI@1
+  inputs:
+    version: 'v1.1.55'
+    connectionString: 'Server=balarama.db.elephantsql.com;Port=5432;Database=gmvuwdtw;User Id=gmvuwdtw;Password=0rdMuRPBVOFU-WzRE8IOikTU1Ssw4oob;'
+    workspacePath: '$(Build.SourcesDirectory)\yuniql\samples\basic-postgresql-sample'
+    targetPlatform: 'postgresql'
+    additionalArguments: '--debug'
