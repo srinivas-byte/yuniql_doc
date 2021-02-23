@@ -20,7 +20,7 @@ steps:
 - task: RunYuniqlCLI@1
   inputs:
     version: 'latest'
-    connectionString: 'Server=tcp:yuniql1011.database.windows.net,1433;Initial Catalog=Yuniql;Persist Security Info=False;User ID=srini;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+    connectionString: 'Server=tcp:yuniql1011.database.windows.net,1433;Initial Catalog=Yuniql;Persist Security Info=False;User ID=srini;Password=@Alpha1kills@beta2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
     workspacePath: '$(Build.SourceDirectory)\yuniql_doc\basic-mysql-sample'
     targetPlatform: 'mysql'
     additionalArguments: '--debug'
