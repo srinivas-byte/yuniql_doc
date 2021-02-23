@@ -20,8 +20,8 @@ steps:
 - task: RunYuniqlCLI@1
   inputs:
     version: 'v1.1.55'
-    connectionString: 'Server=tcp:yuniql1011.database.windows.net,1433;Initial Catalog=Yuniql;Persist Security Info=False;User ID=srini;Password=@Alpha1kills@beta2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
-    workspacePath: '$(Build.SourcesDirectory)\yuniql_doc\basic-mysql-sample'
+    connectionString: postgres://ezvbafiw:XiBCzoqU0_4MTvd825eLwEfwcL4uWNiG@john.db.elephantsql.com:5432/ezvbafiw
+    workspacePath: '$(Build.SourcesDirectory)\yuniql_doc\basic-postgresql-sample'
     targetPlatform: 'mysql'
     autoCreateDatabase: true
     targetVersion: 'v1.1.55'
