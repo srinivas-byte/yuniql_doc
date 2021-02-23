@@ -7,21 +7,23 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  vmImage: 'windows-latest'
 steps:
 - task: CmdLine@2
   inputs:
     script: 'git clone https://github.com/srinivas-byte/yuniql_doc $(Build.SourceDirectory)\yuniql_doc'
 - task: UseYuniqlCLI@1
   inputs:
-    version: 'latest'
+    version: 'v1.1.55'
 
 
 - task: RunYuniqlCLI@1
   inputs:
-    version: 'latest'
+    version: 'v1.1.55'
     connectionString: 'Server=tcp:yuniql1011.database.windows.net,1433;Initial Catalog=Yuniql;Persist Security Info=False;User ID=srini;Password=@Alpha1kills@beta2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
     workspacePath: '$(Build.SourceDirectory)\yuniql_doc\basic-mysql-sample'
     targetPlatform: 'mysql'
+    autoCreateDatabase: true
+    targetVersion: 'v1.1.55'
     additionalArguments: '--debug'
 
