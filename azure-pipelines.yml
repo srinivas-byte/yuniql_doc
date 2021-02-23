@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: windows-latest
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      'git clone https://github.com/srinivas-byte/yuniql_doc.git 
+  
+
+- task: UseYuniqlCLI@1
+  inputs:
+    version: 'latest'
+- task: RunYuniqlCLI@1
+  inputs:
+      version: 'latest'
+      connectionString: 'Server=tcp:yuniql1011.database.windows.net,1433;Initial Catalog=Yuniql;Persist Security Info=False;User ID=srini;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+      workspacePath: '$(Build.SourcesDirectory)\yuniql_doc\basic-mysql-sample'
+      targetPlatform: 'mysql'
+      autoCreateDatabase: true
+      additionalArguments: '--debug'
