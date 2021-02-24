@@ -21,7 +21,7 @@ steps:
   inputs:
     version: 'v1.1.55'
     connectionString: 'Server=john.db.elephantsql.com;port=5432;database=ezvbafiw;User Id=ezvbafiw;Password=XiBCzoqU0_4MTvd825eLwEfwcL4uWNiG;'
-    workspacePath: '$(Build.SourcesDirectory)\yuniql\samples\basic-postgresql-sample'
+    workspacePath: '$(Build.SourcesDirectory)\yuniql_doc\samples\basic-postgresql-sample'
     targetPlatform: 'postgresql'
     additionalArguments: '--force --debug'
 
