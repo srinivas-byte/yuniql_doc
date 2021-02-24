@@ -5,6 +5,9 @@ INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
 INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
 INSERT INTO regions(region_id,region_name) VALUES (4,'Middle East and Africa');
 INSERT INTO regions(region_id,region_name) VALUES (6,'aus');
+INSERT INTO regions(region_id,region_name) VALUES (7,'srilanka');
+
+
  
  
 /*Data for the table countries */
